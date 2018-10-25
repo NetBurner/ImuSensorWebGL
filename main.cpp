@@ -175,9 +175,10 @@ void SendWebSocketData()
     // Prevent the values from changing in the middle of trying to assign them later by storing them
     // in a local variable.
     USER_ENTER_CRITICAL();
-    float p = pitch;
-    float y = yaw;
-    float r = roll;
+    float q0 = q[0];
+    float q1 = q[1];
+    float q2 = q[2];
+    float q3 = q[3];
     USER_EXIT_CRITICAL();
 
     // Our JSON blob that we will send
@@ -191,10 +192,10 @@ void SendWebSocketData()
     jsonOutObj.Add("z", 0.0);
     jsonOutObj.EndObject();
     jsonOutObj.AddObjectStart("RotUpdate");
-    jsonOutObj.Add("w", q[0]);
-    jsonOutObj.Add("x", -q[2]);
-    jsonOutObj.Add("y", -q[3]);
-    jsonOutObj.Add("z", q[1]);
+    jsonOutObj.Add("w", q0);
+    jsonOutObj.Add("x", -q2);
+    jsonOutObj.Add("y", -q3);
+    jsonOutObj.Add("z", q1);
     jsonOutObj.EndObject();
     jsonOutObj.DoneBuilding();
 
