@@ -22,6 +22,7 @@
         var rotX = 0.0;
         var rotY = 0.0;
         var rotZ = 0.0;
+        var rotW = 1.0;
 
         var posX = 0.0;
         var posY = 0.0;
@@ -46,6 +47,7 @@
                         rotX = updateData.RotUpdate.x;
                         rotY = updateData.RotUpdate.y;
                         rotZ = updateData.RotUpdate.z;
+                        rotW = updateData.RotUpdate.w;
                     }
                     ws.onclose = function () { };
                 }
@@ -59,9 +61,10 @@
 
             // Animate our gadget
             if (loadedGadget) {
-                gadget.rotation.x = rotX;
-                gadget.rotation.y = rotY;
-                gadget.rotation.z = rotZ;
+                gadget.quaternion.x = rotX;
+                gadget.quaternion.y = rotY;
+                gadget.quaternion.z = rotZ;
+                gadget.quaternion.w = rotW;
 
                 gadget.position.x = posX;
                 gadget.position.y = posY;

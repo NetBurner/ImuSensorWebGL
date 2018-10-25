@@ -96,6 +96,7 @@ float GoalRot[3] = {0.0, 0.0, 0.0};   // Rotations are stored/sent as radians
 
 
 extern float pitch, yaw, roll, heading;
+extern float q[];
 
 extern "C"
 {
@@ -192,9 +193,10 @@ void SendWebSocketData()
     jsonOutObj.Add("z", 0.0);
     jsonOutObj.EndObject();
     jsonOutObj.AddObjectStart("RotUpdate");
-    jsonOutObj.Add("x", -(p * (M_PI / 180.0f)));
-    jsonOutObj.Add("y", -(y * (M_PI / 180.0f)));
-    jsonOutObj.Add("z", r * (M_PI / 180.0f));
+    jsonOutObj.Add("w", q[0]);
+    jsonOutObj.Add("x", -q[2]);
+    jsonOutObj.Add("y", -q[3]);
+    jsonOutObj.Add("z", q[1]);
     jsonOutObj.EndObject();
     jsonOutObj.DoneBuilding();
 
