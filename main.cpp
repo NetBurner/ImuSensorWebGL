@@ -94,8 +94,6 @@ float GoalPos[3] = {0.0, 0.0, 0.0};
 float Rot[3] = {0.0, 0.0, 0.0};       // Rotations are stored/sent as radians
 float GoalRot[3] = {0.0, 0.0, 0.0};   // Rotations are stored/sent as radians
 
-
-extern float pitch, yaw, roll, heading;
 extern float q[];
 
 extern "C"

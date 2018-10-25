@@ -43,7 +43,7 @@
 #include <system.h>
 #include <pitr_sem.h>
 
-#define SerialDebug 1
+#define SerialDebug 0
 #define CALIBGA 1 //set to 1 to recalibrate gyro and accelerometer- it's fast so I always keep this on
 #define RECALIB_MAG 1 //set to 1 to recalibrate magnetometer- it's slow so I often turn this off after a good calibration
 #define IMU_PIT_TIMER 1 //coordinate with other Programmable Interrupt Timers being used
