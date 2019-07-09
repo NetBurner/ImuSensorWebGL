@@ -1,3 +1,4 @@
+# Visualizing an IMU with WebGL
 The repo takes the previous WebGL example and extends it by incorporating a MPU9250 IMU into the application, and visualizes the rotation data.
 <br><br>
 The code and steps required for setup are detailed in the article, [Visualizing the MPU9250 IMU with WebGL](https://www.netburner.com/learn/visualizing-the-mpu9250-imu-with-webgl/),
